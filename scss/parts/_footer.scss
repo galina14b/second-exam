@@ -1,0 +1,299 @@
+@import "../tools/breakpoints";
+@import "../tools/colors";
+@import "../tools/typography";
+@import "../tools/screen-size";
+
+.footer-part {
+  max-height: 549px;
+
+  @media screen and (max-width: 1121px) {
+    max-height: 397px;
+  }
+}
+
+// бэкграунд футера =============================================================================================
+
+.footer-background {
+  display: block;
+  max-width: $max-width;
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+    height: 549px;
+    object-fit: cover;
+
+    @media screen and (min-width: $max-width) {
+      max-width: $max-width;
+    }
+
+    @media screen and (max-width: 1121px) {
+      height: 410px;
+    }
+
+    @media screen and (max-width: 491px) {
+      height: 549px;
+    }
+  }
+}
+
+// Нижняя часть футера с соц сетями и лого =====================================================================
+
+.footer-bottom {
+  max-width: 770px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 204px;
+  padding-right: $padding-frame;
+  padding-left: $padding-frame;
+
+  @media screen and (max-width: 491px) {
+    max-width: 253px;
+  }
+
+  @media screen and (max-width: 491px){
+    padding-top: 284px;
+  }
+
+  &__soc-sites {
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: $padding-frame;
+
+    @media screen and (max-width: 491px) {
+      padding-left: 0;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+  }
+
+  &__icons {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: transparent;
+
+    &:hover, :active, :focus {
+      fill: #FFFFFF;
+    }
+  }
+
+  &__logo {
+    color: $text-secondary;
+
+    @media screen and (max-width: 491px) {
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    margin-top: 41px;
+    font-family: $title;
+    font-size: 14px;
+    line-height: 17.07px;
+    font-weight: 400;
+
+    @media screen and (max-width: 491px) {
+      text-align: center;
+    }
+  }
+}
+
+// Белый блок с инфо ==============================================================================================
+
+.footer-contacts {
+  margin: 0 auto;
+  background-image: url("../img/background/footer-contacts.png");
+  background-repeat: no-repeat;
+  width: 770px;
+  height: 450px;
+  position: relative;
+  bottom: 764px;
+
+  @media screen and (max-width: 819px){
+    width: 580px;
+  }
+
+  @media screen and (max-width: 621px) {
+    width: 461px;
+  }
+
+  @media screen and (max-width: 491px) {
+    bottom: 825px;
+    width: 406px;
+  }
+
+  @media screen and (max-width: 431px) {
+    width: 320px;
+  }
+
+
+  &__line {
+    padding-top: 91px;
+    max-width: 332px;
+
+    @media screen and (max-width: 819px){
+      padding-top: 61px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @media screen and (max-width: 819px){
+      font-size: 24px;
+    }
+  }
+
+  &__inside {
+    width: 650px;
+    margin: 0 auto;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 819px){
+      width: 246px;
+    }
+  }
+
+  &__data {
+    width: 286px;
+    height: 196px;
+
+  }
+
+  &__icons {
+    width: 14px;
+    height: 14px;
+    fill: $site-color-second;
+    margin-right: 10px;
+
+    @media screen and (max-width: 431px) {
+      margin-right: 5px;
+    }
+  }
+
+  &__form {
+    @media screen and (max-width: 819px){
+      margin-top: -87px;
+    }
+
+    @media screen and (max-width: 431px) {
+      margin-top: -67px;
+    }
+  }
+}
+
+.footer-data__items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -14px;
+
+  @media screen and (max-width: 819px){
+    margin-top: -37px;
+  }
+}
+
+//Блок футера с формой  ===============================================================================================
+
+.form {
+  width: 310px;
+  border: none;
+  border-bottom: rgb(75, 85, 98, 0.5) solid 1px;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  margin-top: 18px;
+
+  @media screen and (max-width: 826px) {
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 431px) {
+    width: 222px;
+  }
+
+}
+
+input::placeholder {
+  font-family: $title;
+  font-weight: normal;
+  color: rgb(75, 85, 98, 0.5);
+  font-size: 18px;
+  line-height: 23px;
+
+  @media screen and (max-width: 431px) {
+    font-size: 14px;
+  }
+}
+
+input[type=text]{
+  font-family: $title;
+  font-weight: normal;
+  color: $text-color-third;
+  font-size: 18px;
+  line-height: 27px;
+
+  @media screen and (max-width: 431px) {
+    font-size: 14px;
+  }
+}
+
+.button {
+  width: 140px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  left: 176px;
+
+  @media screen and (max-width: 819px){
+    left: 147px;
+  }
+
+  @media screen and (max-width: 431px) {
+    width: 120px;
+    height: 40px;
+    left: 120px;
+  }
+}
+
+.distance {
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 819px){
+    margin-bottom: 14px;
+  }
+
+  @media screen and (max-width: 431px) {
+    margin-left: 5px;
+  }
+}
+
+input[type=submit] {
+  border: $text-main solid 1px;
+  background-color: transparent;
+  outline: none;
+  font-family: $title;
+  font-weight: normal;
+  color: $text-color-third;
+  font-size: 18px;
+  line-height: 27px;
+
+  &:hover {
+    border: $site-color-second solid 1px;
+    color: $site-color-second;
+
+  }
+
+  @media screen and (max-width: 431px) {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,21 @@
+@import "tools/breakpoints";
+@import "tools/colors";
+@import "tools/typography";
+@import "tools/screen-size";
+
+
+.body {
+  max-width: $max-width;
+  margin: 0 auto;
+  color: $text-main;
+  font-family: $simple-text;
+  font-size: 18px;
+  line-height: 30px;
+  color: $text-main;
+}
+
+
+@import "parts/_normalize.scss";
+@import "parts/_header.scss";
+@import "parts/_main.scss";
+@import "parts/_footer.scss";

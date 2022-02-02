@@ -1,0 +1,329 @@
+@import "../tools/breakpoints";
+@import "../tools/colors";
+@import "../tools/typography";
+@import "../tools/screen-size";
+
+.header-part {
+  max-height: 800px;
+}
+
+// Бэкграунд хедера ==============================================================================================
+
+.header-background {
+  display: block;
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+    height: 800px;
+    object-fit: cover;
+  }
+}
+
+//Верхняя часть, включает меню и лого ==============================================================================
+
+.top-section {
+  max-width: $content-width;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 54px;
+  padding-right: $padding-frame;
+  padding-left: $padding-frame;
+  flex-wrap: wrap;
+}
+
+.logo {
+  @media screen and (max-width: $tb){
+    flex-grow: 2;
+  }
+}
+
+// Меню =========================================================================================================
+
+.menu {
+  @media screen and (max-width: $tb){
+    display: none;
+  }
+  @media screen and (max-width: $mb){
+    display: none;
+  }
+}
+
+.menu-opened {
+  display: flex;
+  margin: 0 auto;
+}
+
+.hamburger_closed {
+  display: none;
+}
+
+.cross_opened {
+  display: none;
+}
+
+.menu-list {
+  width: 515px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $menu-font;
+  font-size: 0.875rem;
+  line-height: 1.1rem;
+
+  @media screen and (max-width: 856px) {
+    width: 442px;
+  }
+
+  @media screen and (max-width: 783px) {
+    padding-top: 16px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: $tb){
+    flex-direction: column;
+    padding-left: 0;
+    align-items: flex-start;
+    width: max-content;
+    position: absolute;
+    left: 36px;
+    top: 127px;
+  }
+
+  @media screen and (min-width: 371px){
+    left: 71.159vw;
+    top: 90px;
+  }
+
+  @media screen and (min-width: 571px){
+    flex-direction: row;
+    left: 24.159000000000006vw;
+    top: 90px;
+    width: 393px;
+  }
+
+
+  &__links {
+    text-decoration: none;
+    color: $text-secondary;
+
+    &:hover, :active, :focus {
+      .menu-list__ellipses {
+        fill: #FFFFFF;
+      }
+    }
+  }
+
+  &__ellipses {
+    width: 9px;
+    height: 9px;
+    stroke: #FFFFFF;
+    fill: transparent;
+    margin-right: 14px;
+
+    &:hover, :active, :focus {
+      fill: #FFFFFF;
+    }
+  }
+
+  &__items {
+
+    @media screen and (max-width: $tb){
+      padding-top: 5px;
+    }
+  }
+}
+
+.menu-mb {
+  display: none;
+
+  @media screen and (max-width: $tb){
+    display: inline-block;
+    padding-left: $padding-frame;
+  }
+
+  @media screen and (max-width: 371px){
+    padding-top: 70px;
+  }
+}
+
+.hamburger-img {
+  width:40px;
+  height: 40px;
+  fill: #FFFFFF;
+}
+
+.hamburger-img_cross {
+  width:40px;
+  height: 40px;
+  fill: #FFFFFF;
+  position: relative;
+  top: 85px;
+
+  @media screen and (min-width: 371px){
+    top: 6px;
+  }
+
+}
+
+// Соц сети ======================================================================================================
+
+.social-sites {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: $padding-frame;
+
+  @media screen and (max-width: 1046px) {
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+
+  @media screen and (max-width: 783px) {
+    padding-top: 20px;
+  }
+
+  @media screen and (max-width: $tb){
+    padding-top: 0;
+  }
+
+  @media screen and (max-width: 561px){
+    padding-top: 70px;
+  }
+
+  @media screen and (min-width: 371px){
+    margin-left: 10px;
+  }
+
+  &__icons {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: transparent;
+
+    &:hover, :active, :focus {
+      fill: #FFFFFF;
+    }
+
+  }
+}
+
+// Средняя часть, текст и кнопки сбоку для скролинга ==============================================================
+
+.middle-section {
+  margin-top: 222px;
+
+  @media screen and (max-width: 1046px) {
+    margin-top: 160px;
+  }
+
+  @media screen and (max-width: 865px) {
+    margin-top: 115px;
+  }
+
+  @media screen and (max-width: 561px) {
+    margin-top: 100px;
+  }
+
+  &__title {
+    font-family: $title;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 97.52px;
+    color: $text-secondary;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    padding-left: $padding-frame;
+    padding-right: $padding-frame;
+
+
+    @media screen and (max-width: 561px) {
+      font-size: 3.5rem;
+      line-height: 77.5px;
+    }
+
+    @media screen and (max-width: 380px) {
+      font-size: 2.5rem;
+      line-height: 57.5px;
+    }
+  }
+
+  &__text {
+    font-family: $title;
+    font-size: 0.875rem;
+    line-height: 1.3713rem;
+    color: $text-secondary;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    padding-left: $padding-frame;
+    padding-right: $padding-frame;
+  }
+
+  &__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: transparent;
+    stroke: #FFFFFF;
+    display: block;
+    margin: 0 auto;
+    margin-top: 226px;
+
+    &:hover, :active, :focus {
+      fill: #FFFFFF;
+      fill-opacity: 0.4;
+    }
+
+    @media screen and (max-width: 865px) {
+      margin-top: 188px;
+    }
+
+    @media screen and (max-width: 718px) {
+      margin-top: 246px;
+    }
+
+    @media screen and (max-width: 561px) {
+      margin-top: 185px;
+    }
+
+  }
+}
+
+// кнопки сбоку для скролинга ================================================================================
+.dots {
+  position: relative;
+  bottom: 500px;
+  left: 90%;
+  width: 9px;
+
+  @media screen and (max-width: 1005px) {
+    transform: rotate(90deg);
+    bottom: 365px;
+    left: 51.282vw;
+  }
+}
+
+.dots-list {
+  list-style: none;
+
+  &:first-child {
+    fill: #FFFFFF;
+  }
+
+  &__ellipses {
+    width: 10px;
+    height: 10px;
+    fill: transparent;
+    stroke: #FFFFFF;
+    padding-top: 40px;
+
+    &:hover, :active, :focus {
+      fill: #FFFFFF;
+    }
+  }
+}
